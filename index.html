@@ -1,8 +1,10 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        ID Card generator
+        ID Card Generator
     </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -11,87 +13,105 @@
 </head>
 
 <body>
-    <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
-        <div class="text-light w-100 h3 text-center">ID Card generator</div>
+    <header class="navbar navbar-expand-lg navbar-dark pb-3">
+        <div class="text-light bg-primary w-100 h3 text-center p-3">ID Card Generator</div>
     </header>
-    <div class="container d-flex">
-        <div class="section-container col-6">
-            <div class="text-center">
-                Input form
-            </div>
-            <form onsubmit="return false">
-                <div class="form-element">
-                    <label class="form-label">
-                        Enter Name:
-                    </label>
-                    <input type="text" id="name" />
+    <div class="container">
+        <div class="row section-container">
+            <div class="col-6">
+                <div class="text-center pb-3">
+                    <h4>
+                        Input Form
+                    </h4>
                 </div>
-                <div class="form-element">
-                    <label class="form-label">
-                        Enter College Name:
-                    </label>
-                    <input type="text" id="collegeName" />
-                </div>
-                <div class="form-element">
-                    <label class="form-label">
-                        Enter Location:
-                    </label>
-                    <input type="text" id="location" />
-                </div>
-                <div class="form-element">
-                    <label class="form-label">
-                        Enter Address:
-                    </label>
-                    <input type="text" id="Address" />
-                </div>
-                <div class="form-element">
-                    <label class="form-label">
-                        Enter Phone No.:
-                    </label>
-                    <input type="text" id="Number" />
-                </div>
-                <button onclick="generateCard()">Generate Card</button>
-            </form>
-        </div>
-        <div class="section-container col-6">
-            <div class="id-card-container" id="collegeCard">
-                <div class="text-center">
-                    Generated Card
-                </div>
-                <div class="card-container">
-                    <div class="card-wrapper">
-                        <div class="user-card">
-                            <span class="user-photo">
-                                <i class="fa fa-user"></i>
-                            </span>
+                <form onsubmit="return false">
+                    <div class="form-group row">
+                        <label class="form-label col-sm-5 col-form-label">
+                            Enter Name:
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="name" />
                         </div>
-                        <div class="general-information">
-                            <div class="card-element card-name">
-                                <span>Name:</span>
-                                <span id="cardName"></span>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-label col-sm-5 col-form-label">
+                            Enter College Name:
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="collegeName" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-label col-sm-5 col-form-label">
+                            Enter Location:
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="location" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-label col-sm-5 col-form-label">
+                            Enter Address:
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="Address" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-label col-sm-5 col-form-label">
+                            Enter Phone No:
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="Number" />
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="generateCard()">Generate Card</button>
+                </form>
+            </div>
+        
+            <div class="col-6 section-container">
+                <div class="id-card-container" id="collegeCard">
+                    <div class="text-center">
+
+                        <h4>
+                            Generated Card
+                        </h4>
+                    </div>
+                    <div class="card-container">
+                        <div class="card-wrapper">
+                            <div class="user-card">
+                                <span class="user-photo">
+                                    <i class="fa fa-user"></i>
+                                </span>
                             </div>
-                            <div class="card-element college-name">
-                                <span>College Name:</span>
-                                <span id="cardCollegeName"></span>
-                            </div>
-                            <div class="card-element college-name">
-                                <span>Location:</span>
-                                <span id="cardLocation"></span>
-                            </div>
-                            <div class="card-element college-name">
-                                <span>Address:</span>
-                                <span id="cardAddress"></span>
-                            </div>
-                            <div class="card-element college-name">
-                                <span>Phone No. :</span>
-                                <span id="cardNumber"></span>
+                            <div class="general-information">
+                                <div class="card-element card-name">
+                                    <span>Name:</span>
+                                    <span id="cardName"></span>
+                                </div>
+                                <div class="card-element college-name">
+                                    <span>College Name:</span>
+                                    <span id="cardCollegeName"></span>
+                                </div>
+                                <div class="card-element college-name">
+                                    <span>Location:</span>
+                                    <span id="cardLocation"></span>
+                                </div>
+                                <div class="card-element college-name">
+                                    <span>Address:</span>
+                                    <span id="cardAddress"></span>
+                                </div>
+                                <div class="card-element college-name">
+                                    <span>Phone No. :</span>
+                                    <span id="cardNumber"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div>    
     <script src="./js/index.js"></script>
 </body>
 
